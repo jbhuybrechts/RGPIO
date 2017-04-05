@@ -4,6 +4,8 @@ package devices;
 
 
 public class Pin {
-    PinType pinType;
-    String function;
+    public PinType pinType;
+    public String label;
+    public String function;
+    public Device device;
 }

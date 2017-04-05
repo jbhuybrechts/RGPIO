@@ -1,4 +1,4 @@
-package rgpio;
+package devices;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -9,14 +9,14 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.Enumeration;
 
-public class RGPIODispatcherThread extends Thread {
+public class DeviceMonitorThread extends Thread {
 
     /* listens to UDP port 4455 for messages from remote devices.
      The message contains the device unique identifier and ip address.
      First message : the function id of the device pins needs to be determined
      Following messages : the arrival time of the messages is stored
      */
-    public RGPIODispatcherThread() {
+    public DeviceMonitorThread() {
         super("RGPIODispatcherThread");
     }
 
