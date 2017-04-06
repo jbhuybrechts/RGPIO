@@ -3,6 +3,12 @@ package example;
 import rgpio.*;
 import devices.*;
 
+class example{
+    public void run(){
+        
+    }
+}
+
 public class RGPIOExample {
     
     public static void main(String args[]) throws Exception {
@@ -10,9 +16,28 @@ public class RGPIOExample {
         RGPIO rgpio = new RGPIO();
         
         HandleStateChange h = new HandleStateChange();
+ 
+        // device models are added from device description file
         
-        Pin pin = Pin.lookup("sensor5","pin0");
+        Device d;
+        
+        d = DeviceModels.addDeviceModel("ANALOGSENSOR");
+        d.addAnalogInput("pin0");
+
+        d = DeviceModels.addDeviceModel("POWERSWITCH");
+        d.addDigitalInput("on/off");
+        
+        // devices are added for this specific application
+        
+        Device.addDevice("ANALOGSENSOR", "sensor1");
+        
+        // application
+        
+        Device sensor5=Device.getDevice("sensor1");
+        Pin pin = sensor5.getPin("pin0");
         pin.addListener(h);
+        
+        // simulation of events from DeviceMonitorThread
         
         while (true) {
             pin.stateChange(true);

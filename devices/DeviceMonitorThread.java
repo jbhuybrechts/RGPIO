@@ -4,20 +4,16 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.Enumeration;
 
 public class DeviceMonitorThread extends Thread {
 
     /* listens to UDP port 4455 for messages from remote devices.
-     The message contains the device unique identifier and ip address.
-     First message : the function id of the device pins needs to be determined
-     Following messages : the arrival time of the messages is stored
+    
      */
     public DeviceMonitorThread() {
-        super("RGPIODispatcherThread");
+        super("DeviceMonitorThread");
     }
 
     public void run() {
@@ -50,10 +46,10 @@ public class DeviceMonitorThread extends Thread {
 
             }
         } catch (SocketException e) {
-            System.out.println("RGPIODispatcherThread error during socket creation.");
+            System.out.println("DeviceMonitorThread error during socket creation.");
             System.exit(-1);
         } catch (IOException e) {
-            System.out.println("RGPIODispatcherThread error during socket.receive.");
+            System.out.println("DeviceMonitorThread error during socket.receive.");
             System.exit(-1);
         };
 

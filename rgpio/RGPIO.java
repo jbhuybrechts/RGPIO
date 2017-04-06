@@ -1,7 +1,6 @@
 package rgpio;
 
 import devices.DeviceMonitorThread;
-import devices.*;
 
 public class RGPIO {
     
@@ -9,9 +8,11 @@ public class RGPIO {
 
     public RGPIO() {
         
-     new DeviceModels();
+     // read device models
+        
+     // start listening for device messages
      
-     new DeviceMonitorThread().start();
+//    new DeviceMonitorThread().start();
     }
 
 }
