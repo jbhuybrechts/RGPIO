@@ -29,12 +29,12 @@ public class RGPIOExample {
         
         // devices are added for this specific application
         
-        Device.addDevice("ANALOGSENSOR", "sensor1");
+        Devices.addDevice("ANALOGSENSOR", "sensor1");
         
         // application
         
-        Device sensor5=Device.getDevice("sensor1");
-        Pin pin = sensor5.getPin("pin0");
+        Device sensor1=Devices.getDevice("sensor1");
+        Pin pin = sensor1.getPin("pin0");
         pin.addListener(h);
         
         // simulation of events from DeviceMonitorThread
