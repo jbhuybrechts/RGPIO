@@ -4,6 +4,8 @@ import devices.DeviceMonitorThread;
 import devices.*;
 
 public class RGPIO {
+    
+    // bericht aan JB
 
     public RGPIO() {
         
