@@ -41,7 +41,7 @@ public class Pin {
     }
         
         
-        public Pin lookup(String deviceName, String pinLabel){
+        public static Pin lookup(String deviceName, String pinLabel){
             Device device = Device.DEVICES.get(deviceName);
             if (device==null) return null;
             for (Pin pin :device.pins){

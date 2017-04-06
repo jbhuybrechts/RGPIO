@@ -11,7 +11,7 @@ public class RGPIOExample {
         
         HandleStateChange h = new HandleStateChange();
         
-        Pin pin = pinDirectory.provisionDigitalInputPin();
+        Pin pin = Pin.lookup("sensor5","pin0");
         pin.addListener(h);
         
         while (true) {
