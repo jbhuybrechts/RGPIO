@@ -1,21 +1,12 @@
 
+
 package devices;
 
-import rgpio.*;
+import java.util.HashMap;
 
 
 public class PinDirectory {
-
-    /* class that provides the interface to the available pins
-       It maps a function identifier to a pin instance.
-    
-    */
+    public static HashMap<String, Pin> pinMap = new HashMap<>();
     
     
-    
-    RGPIODigitalInputPin pin = new RGPIODigitalInputPin();
-
-    public RGPIODigitalInputPin provisionDigitalInputPin() {
-        return pin;
-    }
 }

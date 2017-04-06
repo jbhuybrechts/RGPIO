@@ -7,12 +7,11 @@ public class RGPIOExample {
     
     public static void main(String args[]) throws Exception {
         
-        RGPIODispatcher RGPIOd = new RGPIODispatcher();
+        RGPIO rgpio = new RGPIO();
         
         HandleStateChange h = new HandleStateChange();
         
-        PinDirectory pinDirectory = new PinDirectory();
-        RGPIODigitalInputPin pin = pinDirectory.provisionDigitalInputPin();
+        Pin pin = pinDirectory.provisionDigitalInputPin();
         pin.addListener(h);
         
         while (true) {

@@ -2,14 +2,11 @@ package devices;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Device {
 
-    public static HashMap<String, Device> MODELS = null;
-    
-    public static List<Device> DEVICES = new LinkedList<>();
+    public static HashMap<String, Device> MODELS = new HashMap<>();  // key is device model name   
+    public static HashMap<String,Device> DEVICES = new HashMap<>();  // key is device instance name
 
     public String model = "";
     public String id = "";        // unique hardware identifier
@@ -51,12 +48,13 @@ public class Device {
         pins.add(p);
     }
 
-    public static Device addDevice(String modelName) {
-        Device deviceModel = MODELS.get(modelName);
+    public static Device addDevice(String modelName, String deviceName) {
+        
+        Device model = MODELS.get(modelName);
         Device device = new Device();
-        DEVICES.add(device);
-        device.model = deviceModel.model;
-        for (Pin p : deviceModel.pins) {
+        DEVICES.put(deviceName,device);
+        device.model = modelName;
+        for (Pin p : model.pins) {
             Pin pin = new Pin();
             pin.label = p.label;
             pin.pinType = p.pinType;

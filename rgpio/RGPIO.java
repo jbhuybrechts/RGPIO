@@ -3,9 +3,9 @@ package rgpio;
 import devices.DeviceMonitorThread;
 import devices.*;
 
-public class RGPIODispatcher {
+public class RGPIO {
 
-    public RGPIODispatcher() {
+    public RGPIO() {
         
      new DeviceModels();
      

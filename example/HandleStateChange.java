@@ -2,11 +2,12 @@
 
 package example;
 
-import rgpio.*;
+import devices.PinEventListener;
+import devices.PinEvent;
 
 
-public class HandleStateChange implements DigitalPinStateChangeListener {
-        public void doOnDigitalPinStateChange(DigitalPinStateChangeEvent event){
-             System.out.println(" listener received DigitalPinStateChangeEvent state="+event.state);
+public class HandleStateChange implements PinEventListener {
+        public void onPinEvent(PinEvent event){
+             System.out.println(" listener received pin event state="+event.state);
          }
      }
